@@ -2,6 +2,7 @@ package br.com.gabriel.gerenciador;
 
 public class Empresa {
 
+	
 	private long id = 0l;
 	private String nome;
 
