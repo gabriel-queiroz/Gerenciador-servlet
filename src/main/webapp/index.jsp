@@ -22,10 +22,11 @@
 	</c:if>
 	
 	
-	<form action="login" method="post">
+	<form action="executa" method="post">
 	
 		Email:  <input type="email" name="email"/> <br>
 		<br>
+				<input type="hidden" name="tarefa" value="Login">
 		Senha:  <input type="password" name="senha"> <br>
 				<input type="submit" value="logar">
 	</form>
@@ -40,8 +41,8 @@
 	
 	<br>
 	
-	<form action="logout" method="post">
-	
+	<form action="executa" method="post">
+	<input type="hidden" name="tarefa" value="Logout">
 	<input type="submit" value="deslogar">
 	
 	</form>

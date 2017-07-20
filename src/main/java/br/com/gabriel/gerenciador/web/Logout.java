@@ -14,40 +14,34 @@ import javax.servlet.http.HttpSession;
 
 import br.com.gabriel.gerenciador.Usuario;
 
-@WebServlet(urlPatterns="/logout")
-public class Logout extends HttpServlet{
 
-	
+public class Logout implements Tarefa{
+
+
+
+
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+	public String executa(HttpServletRequest req, HttpServletResponse resp) {
+
 		RequestDispatcher dispatcher;
-		
+
 		HttpSession session = req.getSession();
-		
+
 		Usuario user =  (Usuario) session.getAttribute("usuarioLogado");
-		
+
 		if(user == null){
-			
-			dispatcher = req.getRequestDispatcher("/WEB-INF/paginas/logoutInvalido.jsp");
-		
-			dispatcher.forward(req, resp);
-			
-			return;
+
+			return 
+					"/WEB-INF/paginas/logoutInvalido.jsp";
+
 		}
-		
-		
-		
+
 		session.removeAttribute("usuarioLogado");
 
-		
-		dispatcher = req.getRequestDispatcher("/WEB-INF/paginas/logout.jsp");
 
-
-		dispatcher.forward(req, resp);
-
-		
+		return 	
+				"/WEB-INF/paginas/logout.jsp";
 
 	}
 }
