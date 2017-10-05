@@ -9,6 +9,8 @@ public class Empresa {
 	public Empresa(String nome) {
 		this.nome = nome;
 	}
+	
+	
 
 	public long getId() {
 		return id;
